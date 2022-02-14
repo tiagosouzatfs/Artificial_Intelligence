@@ -1,0 +1,76 @@
+[System]
+Name='Braking_Level_sugeno'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=30
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='vehicle.speed'
+Range=[0 180]
+NumMFs=3
+MF1='low':'gaussmf',[30 0]
+MF2='average':'gaussmf',[30 90]
+MF3='high':'gaussmf',[30 180]
+
+[Input2]
+Name='vehicle.distance'
+Range=[0 60]
+NumMFs=3
+MF1='small':'trimf',[0 10 20]
+MF2='comfortable':'trimf',[20 30 40]
+MF3='large':'trimf',[40 50 60]
+
+[Input3]
+Name='road.quality'
+Range=[0 10]
+NumMFs=3
+MF1='bad':'trapmf',[0 0 2 4]
+MF2='average':'trimf',[3 5 7]
+MF3='good':'trapmf',[6 8 10 10]
+
+[Output1]
+Name='braking.level'
+Range=[0 100]
+NumMFs=3
+MF1='slow':'constant',[15]
+MF2='median':'constant',[50]
+MF3='fast':'constant',[85]
+
+[Rules]
+1 1 1, 2 (1) : 1
+1 1 2, 2 (1) : 1
+1 1 3, 2 (1) : 1
+1 2 1, 2 (1) : 1
+1 2 2, 1 (1) : 1
+1 2 3, 1 (1) : 1
+1 3 1, 1 (1) : 1
+1 3 2, 1 (1) : 1
+1 3 3, 1 (1) : 1
+2 1 1, 3 (1) : 1
+2 1 2, 3 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 1 (1) : 1
+2 3 1, 1 (1) : 1
+2 3 2, 1 (1) : 1
+2 3 3, 1 (1) : 1
+3 1 1, 3 (1) : 1
+3 1 2, 3 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 1, 3 (1) : 1
+3 2 2, 2 (1) : 1
+3 2 3, 2 (1) : 1
+3 3 1, 2 (1) : 1
+3 3 2, 1 (1) : 1
+3 3 3, 1 (1) : 1
+3 1 1, 3 (1) : 2
+1 3 3, 1 (1) : 2
+2 2 2, 2 (1) : 2
