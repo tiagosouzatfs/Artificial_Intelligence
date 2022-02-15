@@ -1,7 +1,7 @@
 # Artificial_Intelligence
 Repositório da Disciplina de Inteligência Artificial/UFRN - DCA 0200.
 
-<h1>Projeto final</h1>
+<h1>Projeto final (Unid_2)</h1>
 
 <p>Implementar dois sistemas Fuzzy, uma com a máquina de inferência Mamdani e outra Sugeno.</p>
 
