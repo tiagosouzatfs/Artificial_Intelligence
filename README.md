@@ -29,4 +29,4 @@ Repositório da Disciplina de Inteligência Artificial/UFRN - DCA 0200.
   </ul>
 </p>
 
-<p style="max-width=100%; text-align=center;"><img src=""></p>
+<p style="max-width=100%; text-align=center;"><img src="https://github.com/tiagosouzatfs/Artificial_Intelligence/blob/main/Unidade_2/Projeto_2_L%C3%B3gica_Fuzzy/Captura_do_projeto.PNG"></p>
